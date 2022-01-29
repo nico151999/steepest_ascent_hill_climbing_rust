@@ -7,7 +7,7 @@ fn main() {
     print!("Initial route with cost {}: ", route.calc_cost());
     route.print();
     let n = route.len();
-    for i in 0..n*2 {
+    for i in 0..n {
         let j = i % n;
         let mut comparison: Route;
         if j == 0 {
