@@ -21,10 +21,15 @@ pub trait RouteActions {
 
 impl RouteActions for Route {
     fn print(&self) {
-        for route_item in self {
-            print!("{}", route_item);
+        match self.first() {
+            None => {},
+            Some(first) => {
+                for route_item in self {
+                    print!("{} -> ", route_item);
+                }
+                println!("{}", first);
+            },
         }
-        println!();
     }
     fn calc_cost(&self) -> u16 {
         let mut cost: u16 = 0;
